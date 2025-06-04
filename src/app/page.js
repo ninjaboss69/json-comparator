@@ -49,11 +49,11 @@ export default function Home() {
      
      setOldJSONStatus("Valid JSON");
      setNewJSONStatus("Valid JSON");
-     const compareResult = diffJSONV1(JSON.parse(oldJSON),JSON.parse(newJSON));
+     const compareResult = diffJSON(JSON.parse(oldJSON),JSON.parse(newJSON));
 
      if(compareResult.logs.length===0)setResultStatus("These two json are identical");
      else setResultStatus("There are differences");
-     setResultData(JSON.stringify(compareResult));
+     setResultData(JSON.stringify(compareResult.logs));
      
 
     }catch(err){
